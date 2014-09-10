@@ -1,3 +1,0 @@
-@prefix s: <http://www.sbml.org/sbml/level2/version4/> .
-@prefix cd: <http://www.sbml.org/2001/ns/cd/> .
-
