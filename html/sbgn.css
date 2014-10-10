@@ -1,0 +1,39 @@
+html,body {
+	background-color: #f0f0f0;
+}
+ellipse.simple_molecule {
+	fill: rgba(0, 256, 0, 0.5);
+	stroke: rgba(0, 256, 0, 1);
+	stroke-width: 2;
+}
+rect.protein {
+	fill: rgba(256, 0, 0, 0.5);
+	stroke: rgba(256, 0, 0, 1);
+	stroke-width: 2;
+}
+rect.complex {
+	fill: none;
+	stroke: black;
+	stroke-width: 2;
+}
+text {
+	fill: black;
+	font-size: 11px;
+}
+text.protein {
+	text-anchor: middle;
+}
+text.complex {
+	text-anchor: middle;
+}
+text.simple_molecule {
+	text-anchor: middle;
+}
+path {
+	fill: none;
+	stroke: black;
+	stroke-width: 1;
+}
+polygon {
+	fill: black;
+}
