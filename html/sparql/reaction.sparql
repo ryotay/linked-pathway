@@ -1,0 +1,24 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX s: <http://www.sbml.org/sbml/level2/version4/>
+PREFIX cd: <http://www.sbml.org/2001/ns/cd/>
+SELECT
+  ('reaction' AS ?type)
+  ?metaid
+  ?reaction_type
+  ?br_metaid
+  ?br_position
+  ?bp_metaid
+  ?bp_position
+WHERE {
+  ?r a cd:reaction
+. ?r cd:metaid ?metaid
+. ?r cd:reaction_type ?reaction_type
+. ?r cd:base_reactant ?br
+. ?br cd:species ?br_species
+. ?br_species cd:metaid ?br_metaid
+. ?br cd:position ?br_position
+. ?r cd:base_product ?bp
+. ?bp cd:species ?bp_species
+. ?bp_species cd:metaid ?bp_metaid
+. ?bp cd:position ?bp_position
+}

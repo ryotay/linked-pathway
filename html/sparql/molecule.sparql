@@ -1,0 +1,28 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX s: <http://www.sbml.org/sbml/level2/version4/>
+PREFIX cd: <http://www.sbml.org/2001/ns/cd/>
+SELECT
+  ?type
+  ?metaid
+  ?label
+  ?bounds_x
+  ?bounds_y
+  ?bounds_w
+  ?bounds_h
+WHERE {
+  ?s a cd:species
+. {
+    {?s cd:class cd:PROTEIN . ?sa a cd:speciesAlias} UNION
+    {?s cd:class cd:COMPLEX . ?sa a cd:complexSpeciesAlias} UNION
+    {?s cd:class cd:SIMPLE_MOLECULE . ?sa a cd:speciesAlias}
+  }
+. ?s cd:class ?t
+. ?t rdfs:label ?type
+. ?s cd:metaid ?metaid
+. ?s cd:name ?label
+. ?sa cd:species ?s
+. ?sa cd:bounds_x ?bounds_x
+. ?sa cd:bounds_y ?bounds_y
+. ?sa cd:bounds_w ?bounds_w
+. ?sa cd:bounds_h ?bounds_h
+}

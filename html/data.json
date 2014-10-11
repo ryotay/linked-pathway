@@ -1,0 +1,189 @@
+{
+  "head": {
+    "vars": [ "type" , "s" , "label" , "bounds_x" , "bounds_y" , "bounds_w" , "bounds_h" ]
+  } ,
+  "results": {
+    "bindings": [
+     {
+         "type": { "type": "literal" , "value": "protein" } ,
+         "metaid": { "type": "literal" , "value": "s8846" } ,
+         "label": { "type": "literal" , "value": "Bud5" } ,
+         "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "331.0" } ,
+         "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "267.0" } ,
+         "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+         "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "40.0" }
+       } ,
+       {
+         "type": { "type": "literal" , "value": "protein" } ,
+         "metaid": { "type": "literal" , "value": "s8845" } ,
+         "label": { "type": "literal" , "value": "Bud2" } ,
+         "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "455.0" } ,
+         "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "182.0" } ,
+         "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+         "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "40.0" }
+       } ,
+       {
+         "type": { "type": "literal" , "value": "protein" } ,
+         "metaid": { "type": "literal" , "value": "s135" } ,
+         "label": { "type": "literal" , "value": "Cdc24" } ,
+         "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "75.0" } ,
+         "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "232.0" } ,
+         "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+         "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "40.0" }
+       } ,
+       {
+         "type": { "type": "literal" , "value": "protein" } ,
+         "metaid": { "type": "literal" , "value": "s8841" } ,
+         "label": { "type": "literal" , "value": "Rsr1" } ,
+         "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "385.0" } ,
+         "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "381.0" } ,
+         "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+         "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "40.0" }
+       } ,
+       {
+         "type": { "type": "literal" , "value": "protein" } ,
+         "metaid": { "type": "literal" , "value": "s6184" } ,
+         "label": { "type": "literal" , "value": "RSR1" } ,
+         "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "45.0" } ,
+         "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "89.0" } ,
+         "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+         "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "60.0" }
+       } ,
+       {
+         "type": { "type": "literal" , "value": "protein" } ,
+         "metaid": { "type": "literal" , "value": "s7176" } ,
+         "label": { "type": "literal" , "value": "RSR1" } ,
+         "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "195.0" } ,
+         "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "191.0" } ,
+         "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+         "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "40.0" }
+       } ,
+       {
+         "type": { "type": "literal" , "value": "protein" } ,
+         "metaid": { "type": "literal" , "value": "s7173" } ,
+         "label": { "type": "literal" , "value": "CDC24" } ,
+         "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "45.0" } ,
+         "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "46.5" } ,
+         "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+         "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "40.0" }
+       } ,
+       {
+           "type": { "type": "literal" , "value": "complex" } ,
+           "metaid": { "type": "literal" , "value": "s8839" } ,
+           "label": { "type": "literal" , "value": "GDP-Rsr1" } ,
+           "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "379.0" } ,
+           "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "340.0" } ,
+           "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "92.0" } ,
+           "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "104.0" }
+         } ,
+         {
+           "type": { "type": "literal" , "value": "complex" } ,
+           "metaid": { "type": "literal" , "value": "s7648" } ,
+           "label": { "type": "literal" , "value": "Cdc24-GTP-Rsr1" } ,
+           "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "35.0" } ,
+           "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "34.5" } ,
+           "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "100.0" } ,
+           "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "135.0" }
+         } ,
+         {
+           "type": { "type": "literal" , "value": "complex" } ,
+           "metaid": { "type": "literal" , "value": "s7646" } ,
+           "label": { "type": "literal" , "value": "GTP-Rsr1" } ,
+           "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "189.0" } ,
+           "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "150.0" } ,
+           "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "92.0" } ,
+           "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "104.0" }
+         } ,
+         {
+           "type": { "type": "literal" , "value": "complex" } ,
+           "metaid": { "type": "literal" , "value": "s7647" } ,
+           "label": { "type": "literal" , "value": "GTP-Rsr1" } ,
+           "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "45.0" } ,
+           "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "89.5" } ,
+           "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+           "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "60.0" }
+         } ,
+         {
+             "type": { "type": "literal" , "value": "simple_molecule" } ,
+             "metaid": { "type": "literal" , "value": "s8844" } ,
+             "label": { "type": "literal" , "value": "GDP" } ,
+             "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "270.0" } ,
+             "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "339.5" } ,
+             "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "70.0" } ,
+             "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "25.0" }
+           } ,
+           {
+             "type": { "type": "literal" , "value": "simple_molecule" } ,
+             "metaid": { "type": "literal" , "value": "s8843" } ,
+             "label": { "type": "literal" , "value": "GTP" } ,
+             "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "130.0" } ,
+             "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "339.5" } ,
+             "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "70.0" } ,
+             "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "25.0" }
+           } ,
+           {
+             "type": { "type": "literal" , "value": "simple_molecule" } ,
+             "metaid": { "type": "literal" , "value": "s8842" } ,
+             "label": { "type": "literal" , "value": "GDP" } ,
+             "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "388.17647058823513" } ,
+             "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "353.3529411764707" } ,
+             "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "70.0" } ,
+             "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "25.0" }
+           } ,
+           {
+             "type": { "type": "literal" , "value": "simple_molecule" } ,
+             "metaid": { "type": "literal" , "value": "s7175" } ,
+             "label": { "type": "literal" , "value": "GTP" } ,
+             "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "198.17647058823513" } ,
+             "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "163.35294117647072" } ,
+             "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "70.0" } ,
+             "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "25.0" }
+           } ,
+           {
+             "type": { "type": "literal" , "value": "simple_molecule" } ,
+             "metaid": { "type": "literal" , "value": "s6186" } ,
+             "label": { "type": "literal" , "value": "GTP" } ,
+             "bounds_x": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "45.0" } ,
+             "bounds_y": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "89.0" } ,
+             "bounds_w": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "80.0" } ,
+             "bounds_h": { "datatype": "http://www.w3.org/2001/XMLSchema#decimal" , "type": "typed-literal" , "value": "60.0" }
+           } ,
+           {
+               "type": { "type": "literal" , "value": "reaction" } ,
+               "metaid": { "type": "literal" , "value": "re219" } ,
+               "reaction_type": { "type": "literal" , "value": "STATE_TRANSITION" } ,
+               "br_metaid": { "type": "literal" , "value": "s7646" } ,
+               "br_position": { "type": "literal" , "value": "E" } ,
+               "bp_metaid": { "type": "literal" , "value": "s8839" } ,
+               "bp_position": { "type": "literal" , "value": "N" }
+             } ,
+             {
+               "type": { "type": "literal" , "value": "reaction" } ,
+               "metaid": { "type": "literal" , "value": "re218" } ,
+               "reaction_type": { "type": "literal" , "value": "STATE_TRANSITION" } ,
+               "br_metaid": { "type": "literal" , "value": "s8839" } ,
+               "br_position": { "type": "literal" , "value": "W" } ,
+               "bp_metaid": { "type": "literal" , "value": "s7646" } ,
+               "bp_position": { "type": "literal" , "value": "S" }
+             } ,
+             {
+               "type": { "type": "literal" , "value": "reaction" } ,
+               "metaid": { "type": "literal" , "value": "re99" } ,
+               "reaction_type": { "type": "literal" , "value": "HETERODIMER_ASSOCIATION" } ,
+               "br_metaid": { "type": "literal" , "value": "s135" } ,
+               "br_position": { "type": "literal" , "value": "N" } ,
+               "bp_metaid": { "type": "literal" , "value": "s7648" } ,
+               "bp_position": { "type": "literal" , "value": "S" }
+             } ,
+             {
+               "type": { "type": "literal" , "value": "reaction" } ,
+               "metaid": { "type": "literal" , "value": "re99" } ,
+               "reaction_type": { "type": "literal" , "value": "HETERODIMER_ASSOCIATION" } ,
+               "br_metaid": { "type": "literal" , "value": "s7646" } ,
+               "br_position": { "type": "literal" , "value": "W" } ,
+               "bp_metaid": { "type": "literal" , "value": "s7648" } ,
+               "bp_position": { "type": "literal" , "value": "S" }
+             }
+    ]
+  }
+}

@@ -5,43 +5,38 @@ var vbox_y = 0;
 var vbox_default_width = vbox_width = 1000;
 var vbox_default_height = vbox_height = 500;
 var svg = d3.select("body")
-.append("svg")
-.attr("width", svg_w)
-.attr("height", svg_h)
-.attr("viewBox", "" + vbox_x + " " + vbox_y + " " + vbox_width + " " + vbox_height);
+	.append("svg")
+	.attr("width", svg_w)
+	.attr("height", svg_h)
+	.attr("viewBox", "" + vbox_x + " " + vbox_y + " " + vbox_width + " " + vbox_height);
 
-var dataset = raw_dataset.results.bindings;
+// READ JSON FILES
+$.getJSON("data/molecule.json", function(json){
+	var data = json.results.bindings;
+	$.getJSON("data/reaction.json", function(json){
+		data = data.concat(json.results.bindings);
+		draw(data);
+	});
+});
+function draw(data) {
+	
+	var data_rectangle = filter_data(data, "protein")
+		.concat(filter_data(data, "complex"));
+	draw_rectangle(data_rectangle);
 
-function convert_dataset(ds) {
-	var bindings = ds.results.bindings;
-	for (var i=0; i<bindings.length; i++) {
-		var obj = bindings[i];
-		console.log(obj.label);
-		for (var j=0; j<obj.length; j++) {
-			console.log("obj: " + obj[j]);
-		}
-		console.log("bin: " + bindings[i]);
-	} 
-	return ds.results.bindings;
+	var data_ellipse = filter_data(data, "simple_molecule");
+	draw_ellipse(data_ellipse);
+	
+	var data_path = filter_data(data, "reaction");
+	draw_path(data_path);
+	
+	draw_text(data);
+	
+	add_zoom();
 }
-
-// FUNCTION
-function filter_dataset(array, str) {
-	function f(d) {
-		if (d.type.value == str) {
-			return( true );
-		}
-	}
-	return array.filter(f);
-}
-
-var dataset_rect = [];
-
-// RECTANGLE: PROTEIN, COMPLEX
-dataset_rect = dataset_rect.concat(filter_dataset(dataset, "protein"));
-dataset_rect = dataset_rect.concat(filter_dataset(dataset, "complex"));
-svg.selectAll("rect")
-	.data(dataset_rect)
+function draw_rectangle(data) {
+	svg.selectAll("rect")
+	.data(data)
 	.enter()
 	.append("rect")
 	.attr("id", function(d) { return d.metaid.value; })
@@ -52,11 +47,10 @@ svg.selectAll("rect")
 	.attr("class", function(d) { return d.type.value; })
 	.attr("x", function(d) { return d.bounds_x.value; })
 	.attr("y", function(d) { return d.bounds_y.value; });
-
-// ELLIPSE: SIMPLE_MOLECULE
-var dataset_ellipses = filter_dataset(dataset, "simple_molecule");
-var ellipses = svg.selectAll("ellipse")
-	.data(dataset_ellipses)
+}
+function draw_ellipse(data) {
+	var ellipses = svg.selectAll("ellipse")
+	.data(data)
 	.enter()
 	.append("ellipse")
 	.attr("id", function(d) { return d.metaid.value; })
@@ -65,24 +59,64 @@ var ellipses = svg.selectAll("ellipse")
 	.attr("class", function(d) { return d.type.value; })
 	.attr("cx", function(d) { return Number(d.bounds_x.value) + Number(d.bounds_w.value) / 2; })
 	.attr("cy", function(d) { return Number(d.bounds_y.value) + Number(d.bounds_h.value) / 2; });
+	return ellipses;
+}
+function add_zoom() {
+	zoom = d3.behavior.zoom().on("zoom", function(d) {
+	    var befere_vbox_width, before_vbox_height, d_x, d_y;
+	    befere_vbox_width = vbox_width;
+	    before_vbox_height = vbox_height;
+	    vbox_width = vbox_default_width * d3.event.scale;
+	    vbox_height = vbox_default_height * d3.event.scale;
+	    d_x = (befere_vbox_width - vbox_width) / 2;
+	    d_y = (before_vbox_height - vbox_height) / 2;
+	    vbox_x += d_x;
+	    vbox_y += d_y;
+	    return svg.attr("viewBox", "" + vbox_x + " " + vbox_y + " " + vbox_width + " " + vbox_height);
+	});
+	svg.call(zoom);
+}
+function filter_data(array, str) {
+	function f(d) {
+		if (d.type.value == str) {
+			return( true );
+		}
+	}
+	return array.filter(f);
+}
 
-// ARROWHEAD
-var marker = svg.append("defs").append("marker")
-.attr({
-  'id': "arrowhead",
-  'refX': 10,
-  'refY': 5,
-  'markerWidth': 10,
-  'markerHeight': 10,
-  'markerUnits': "strokeWidth",
-  'orient': "auto",
-});
-marker.append("polygon")
-.attr({
-  points: "0,0 0,5 0,10 10,5"
-});
+// PATH RELATED FUNCTIONS
 
-// PATH
+function draw_path(data) {
+	define_arrowhead();
+	var line = d3.svg.line()
+		//.interpolate('basis')
+		.x(function(d) {return d.x;})
+		.y(function(d) {return d.y;});
+	path = svg.selectAll("path")
+		.data(data)
+		.enter()
+		.append("path")
+		.attr("class", "path")
+		.attr("d", function(d) { return line(position_array(d.br_metaid.value, d.br_position.value, d.bp_metaid.value, d.bp_position.value)); })
+		.attr("marker-end", "url(#arrowhead)");
+}
+function define_arrowhead() {
+	var marker = svg.append("defs").append("marker")
+	.attr({
+	  'id': "arrowhead",
+	  'refX': 10,
+	  'refY': 5,
+	  'markerWidth': 10,
+	  'markerHeight': 10,
+	  'markerUnits': "strokeWidth",
+	  'orient': "auto",
+	});
+	marker.append("polygon")
+	.attr({
+	  points: "0,0 0,5 0,10 10,5"
+	});
+}
 function position(metaid, direction) {
 	var x, y;
 	var rect = d3.select("rect#" + metaid);
@@ -114,24 +148,20 @@ function position_array(br_metaid, br_direction, bp_metaid, bp_direction) {
 		return [br_position, bp_position];
 	}
 }
-var line = d3.svg.line()
-	//.interpolate('basis')
-	.x(function(d) {return d.x;})
-	.y(function(d) {return d.y;});
-var dataset_path = filter_dataset(dataset, "reaction");
-//test1 = position("s7646", "E");
-//test2 = position("s8839", "N");
-//test = line([position("s7646", "E"), position("s8839", "N")]);
-path = svg.selectAll("path")
-	.data(dataset_path)
-	.enter()
-	.append("path")
-	.attr("class", "path")
-	//.attr("d", function(d) { return line([position(d.br_metaid.value, d.br_position.value), position(d.bp_metaid.value, d.bp_position.value)]); })
-	.attr("d", function(d) { return line(position_array(d.br_metaid.value, d.br_position.value, d.bp_metaid.value, d.bp_position.value)); })
-	.attr("marker-end", "url(#arrowhead)");
 
-// TEXT
+// TEXT RELATED FUNCTIONS
+
+function draw_text(data) {
+	svg.selectAll("text")
+		.data(data)
+	    .enter()
+	    .append("text")
+	    .text(function(d) { return position_text(d).t; })
+	    .attr("class", "reaction")
+	    .attr("x", function(d) { return position_text(d).x; }) // THIS IS CENTER!
+	    .attr("y", function(d) { return position_text(d).y; })
+	    .attr("text-anchor", function(d) { return position_text(d).a; });
+}
 function position_text(d) {
 	if (d.type.value == "protein" || d.type.value == "complex" ||d.type.value == "simple_molecule") {
 		return position_text_molecule(d);
@@ -177,51 +207,3 @@ function position_text_reaction(d) {
 	}
 	return {t:t, x:x, y:y, a:a};
 }
-svg.selectAll("text")
-	.data(dataset)
-    .enter()
-    .append("text")
-    .text(function(d) { return position_text(d).t; })
-    .attr("class", "reaction")
-    .attr("x", function(d) { return position_text(d).x; }) // THIS IS CENTER!
-    .attr("y", function(d) { return position_text(d).y; })
-    .attr("text-anchor", function(d) { return position_text(d).a; });
-
-
-
-
-//PATH FOR TEST (DELETE LATER)
-/*
-var c1 = [200, 90, 30];
-var c2 = [100, 120, 20];
-var carray2 = [c1, c2];
-var carray3 = [{x:(189.0+92.0), y:(150.0+104.0/2)},{x:(379.0+92.0/2), y:(150.0+104.0/2)},{x:(379.0+92.0/2), y:340.0}]
-var line = d3.svg.line()
-//.interpolate('basis')
-.x(function(d) {return d.x;})
-.y(function(d) {return d.y;});
-svg.append('path')
-.attr({
-  'stroke': 'lightgreen',
-  'stroke-width': 5,
-  'fill': 'none',
-  'marker-end': 'url(#arrowhead)'
-})
-.attr("d", function(d) { return line([{x:(189.0+92.0), y:(150.0+104.0/2)},{x:(379.0+92.0/2), y:(150.0+104.0/2)},{x:(379.0+92.0/2), y:340.0}]); })
-;
-*/
-
-// ZOOM
-zoom = d3.behavior.zoom().on("zoom", function(d) {
-    var befere_vbox_width, before_vbox_height, d_x, d_y;
-    befere_vbox_width = vbox_width;
-    before_vbox_height = vbox_height;
-    vbox_width = vbox_default_width * d3.event.scale;
-    vbox_height = vbox_default_height * d3.event.scale;
-    d_x = (befere_vbox_width - vbox_width) / 2;
-    d_y = (before_vbox_height - vbox_height) / 2;
-    vbox_x += d_x;
-    vbox_y += d_y;
-    return svg.attr("viewBox", "" + vbox_x + " " + vbox_y + " " + vbox_width + " " + vbox_height);
-});
-svg.call(zoom);

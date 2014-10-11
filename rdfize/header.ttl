@@ -1,3 +1,13 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix s: <http://www.sbml.org/sbml/level2/version4/> .
 @prefix cd: <http://www.sbml.org/2001/ns/cd/> .
 
+cd:PROTEIN
+  rdfs:label "protein";
+  .
+cd:COMPLEX
+  rdfs:label "complex";
+  .
+cd:SIMPLE_MOLECULE
+  rdfs:label "simple_molecule";
+  .
